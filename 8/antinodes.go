@@ -10,12 +10,7 @@ import (
 var freqRegex, _ = regexp.Compile(`[A-Za-z0-9]`)
 
 func main() {
-	input := common.GetInput("8")
-	inputLines := strings.Split(input, "\n")
-	var grid [][]string
-	for _, line := range inputLines {
-		grid = append(grid, strings.Split(line, ""))
-	}
+	grid := common.InputTo2dArray(common.GetInput("8"))
 	antennaCoords := make(map[string][][2]int)
 	for y := range grid {
 		for x, cell := range grid[y] {

@@ -2,7 +2,6 @@ package main
 
 import (
 	"advent24/common"
-	"strings"
 )
 
 type GuardDirection interface {
@@ -72,11 +71,7 @@ func (DownwardsGuardDirection) getName() string {
 }
 
 func main() {
-	input := common.GetInput("6")
-	var grid [][]string
-	for _, row := range strings.Split(input, "\n") {
-		grid = append(grid, strings.Split(row, ""))
-	}
+	grid := common.InputTo2dArray(common.GetInput("6"))
 	var initialGuardPos = []int{0, 0}
 	initialPosFound := false
 	for y := range grid {

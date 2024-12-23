@@ -2,7 +2,6 @@ package main
 
 import (
 	"advent24/common"
-	"strings"
 )
 
 func checkAllDirectionsPart1(grid [][]string, x int, y int) int {
@@ -73,11 +72,7 @@ func checkAllDirectionsPart2(grid [][]string, x int, y int) bool {
 }
 
 func main() {
-	input := common.GetInput("4")
-	var grid [][]string
-	for _, row := range strings.Split(input, "\n") {
-		grid = append(grid, strings.Split(row, ""))
-	}
+	grid := common.InputTo2dArray(common.GetInput("4"))
 	count := 0
 	for y, row := range grid {
 		for x, col := range row {
